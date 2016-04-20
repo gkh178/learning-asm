@@ -1,0 +1,36 @@
+Microsoft (R) Macro Assembler Version 6.11		    09/17/09 23:38:57
+tempfile.asm						     Page 1 - 1
+
+
+				assume cs:codesg
+ 0000				codesg segment     ;定义代码段
+ 0000  B8 2000				mov ax,2000H 
+ 0003  8E D0				mov ss,ax
+ 0005  BC 0000				mov sp,0       ;定义栈顶元素
+ 0008  83 C4 04				add sp,4
+ 000B  58				pop ax
+ 000C  5B				pop bx
+ 000D  50				push ax
+ 000E  53				push bx
+ 000F  58				pop ax
+ 0010  5B				pop bx
+ 0011  B8 4C00				mov ax,4c00H
+ 0014  CD 21				int 21H        ;程序返回，将控制权还回COMMAND
+ 0016				codesg ends        ;定义代码段
+				end                ;程序结束
+					
+
+Microsoft (R) Macro Assembler Version 6.11		    09/17/09 23:38:57
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+codesg . . . . . . . . . . . . .	16 Bit	 0016	  Para	  Private 
+
+	   0 Warnings
+	   0 Errors
